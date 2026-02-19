@@ -2,31 +2,32 @@
 Implementation of a UI Policy that monitors the 'acrobat' variable.  When selected, it triggers a script to suggest 'Adobe Photoshop' under the  'Additional_software_requirements' field.
 
 ## 📝 Project Overview
-This project optimizes the **MacBook Pro** catalog item using a UI Policy. [cite_start]When a user selects **Adobe Acrobat**, the system suggests **Adobe Photoshop** via a field message anchored to the additional requirements field.
+This project optimizes the **MacBook Pro** catalog item using a UI Policy. When a user selects **Adobe Acrobat**, the system suggests **Adobe Photoshop** via a field message anchored to the additional requirements field.
 
 ---
 
 ## 🏛️ System Architecture
 The solution utilizes the **ServiceNow UI Policy Engine**, providing a more maintainable, condition-based logic flow:
-* [cite_start]**Trigger-Based:** Executes logic based on the `acrobat` variable state[cite: 1, 14].
-* [cite_start]**Automatic Reversal:** Clears messages automatically when conditions are no longer met[cite: 17, 18].
-* [cite_start]**Targeted UI:** Anchored directly to the `Additional_software_requirements` variable[cite: 16].
+* **Trigger-Based:** Executes logic based on the `acrobat` variable state.
+* **Automatic Reversal:** Clears messages automatically when conditions are no longer met.
+* **Targeted UI:** Anchored directly to the `Additional_software_requirements` variable.
 
 
 
 | Variable | Internal Name | Role |
 | :--- | :--- | :--- |
-| **Acrobat** | `acrobat` | [cite_start]Condition Trigger [cite: 8, 14] |
-| **Additional Requirements** | `Additional_software_requirements` | [cite_start]Message Display Target [cite: 16] |
+| **Acrobat** | `acrobat` | Condition Trigger  |
+| **Additional Requirements** | `Additional_software_requirements` | Message Display Target  |
 
 ---
 
 ## 📂 File Inventory
-* [cite_start][Technical Manual v2](./Technical_Manual_v2.txt) - Detailed, click-by-click build guide for manual replication.
-* [cite_start][Catalog-With-UI-Policy v2](./Catalog-With-UI-Policy_v2.xml) - Update Set XML containing the UI Policy and Catalog Item[cite: 23, 24].
-* [cite_start][UpdateSet_v2.PNG](./UpdateSet_v2.PNG) - Screenshot of the captured UI Policy updates[cite: 23].
-* [cite_start][Output_v2.PNG](./Output_v2.PNG) - Visual verification of the info message[cite: 21].
-* [UIPolicy_v2.PNG](./UIPolicy_v2.PNG) - Reference capture of the UI Policy conditions and script settings.
+* [Technical Manual v3](./Technical_Manual_v3.txt) - Detailed, click-by-click build guide for manual replication.
+* [Catalog_With_UI_Policy_v3](./Catalog_With_UI_Policy_v3.xml) - Update Set XML containing the UI Policy and Catalog Item.
+* [UpdateSet_v3.PNG](./UpdateSet_v3.PNG) - Screenshot of the captured for Update set.
+* [Output_v3.PNG](./Output_v3.PNG) - Visual verification of the info message.
+* [CatalogUIPolicy.PNG](./CatalogUIPolicy_v3.PNG) - Reference capture of the UI Policy conditions and script settings.
+* [CatalogUIPolicy.PNG](./CatalogUIPolicy__v3.PNG) - Reference capture of the UI Policy conditions and script settings.
 
 ---
 
