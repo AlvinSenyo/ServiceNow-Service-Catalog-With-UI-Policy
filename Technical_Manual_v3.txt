@@ -1,0 +1,57 @@
+================================================================================
+TECHNICAL MANUAL: CATALOG ITEM RECOMMENDATION LOGIC (UI POLICY VERSION)
+Target Item: MacBook Pro
+Functionality: Contextual Software Recommendation via UI Policy
+================================================================================
+
+1. OVERVIEW
+-----------
+Implementation of a UI Policy that monitors the 'acrobat' variable. 
+When selected, it triggers a script to suggest 'Adobe Photoshop' under the 
+'Additional_software_requirements' field.
+
+2. DEPLOYMENT CONTEXT (UPDATE SET)
+----------------------------------
+1. Navigate to: System Update Sets > Local Update Sets.
+2. Create New: 'MacBook Pro - Software Recommendation UI Policy v1.0'[cite: 3].
+3. Click [Submit and Make Current][cite: 3].
+
+3. UI NAVIGATION & LOCATION
+---------------------------
+1. Navigate to: Service Catalog > Catalog Definitions > Maintain Items[cite: 5].
+2. Search and open the 'MacBook Pro' record[cite: 6].
+3. Scroll to 'Related Lists' and click [Catalog UI Policies][cite: 7].
+4. Click [New][cite: 7].
+
+4. UI POLICY CONFIGURATION
+--------------------------
+- Short description: Recommend Photoshop for Acrobat.
+- Catalog Item: Developer Laptop (Mac).
+- Global: Checked.
+- OnLoad: Checked.
+- Reverse if false: Checked[cite: 17].
+- Conditions: [acrobat] [is] [true] (or acrobat is acrobat).
+
+5. SCRIPT IMPLEMENTATION
+------------------------
+1. Click the 'Script' tab and check [Run scripts].
+2. In 'Execute if True', paste:
+   g_form.showFieldMsg('Additional_software_requirements', "Recommendation: Adobe Photoshop as well...", 'info'); 
+3. In 'Execute if False', paste:
+   g_form.hideFieldMsg('Additional_software_requirements'); [cite: 17]
+
+6. VERIFICATION (TESTING)
+-------------------------
+1. On the MacBook Pro record, click the [Try It] button[cite: 19, 20].
+2. Select 'Acrobat'.
+3. CONFIRM: Blue info box appears under 'Additional_software_requirements'.
+4. Deselect 'Acrobat'[cite: 22].
+5. CONFIRM: The message disappears[cite: 22].
+
+7. MIGRATION
+------------
+1. Mark Update Set as 'Complete'.
+2. Export to XML.
+================================================================================
+END OF MANUAL
+================================================================================
