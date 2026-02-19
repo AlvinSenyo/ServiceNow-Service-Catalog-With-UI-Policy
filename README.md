@@ -32,22 +32,22 @@ The solution utilizes the **ServiceNow UI Policy Engine**, providing a more main
 ---
 
 ## 💡 Key Functions
-* [cite_start]**Condition Engine:** Uses the built-in UI Policy condition builder instead of `onChange` triggers[cite: 8, 14].
-* [cite_start]**Execute if True:** Injects the recommendation message when Acrobat is selected[cite: 14, 15].
-* [cite_start]**Execute if False:** Clears the message if Acrobat is deselected, ensuring a clean UI[cite: 17, 18].
+* [cite_start]**Condition Engine:** Uses the built-in UI Policy condition builder instead of `onChange` triggers.
+* [cite_start]**Execute if True:** Injects the recommendation message when Acrobat is selected.
+* [cite_start]**Execute if False:** Clears the message if Acrobat is deselected, ensuring a clean UI.
 
 ---
 
 ## 🚀 Deployment Instructions
-[cite_start]This solution is packaged in a **Local Update Set**[cite: 2, 3].
-1. [cite_start]**Source Instance:** Ensure state is **Complete** and export to XML[cite: 24].
-2. [cite_start]**Target Instance:** **Import XML** -> **Preview** -> **Commit**[cite: 24].
+[cite_start]This solution is packaged in a **Local Update Set**.
+1. [cite_start]**Source Instance:** Ensure state is **Complete** and export to XML.
+2. [cite_start]**Target Instance:** **Import XML** -> **Preview** -> **Commit**.
 
 ---
 
 ## 🛠️ The Logic (UI Policy Script)
 
-[cite_start]Set the UI Policy Condition to: `acrobat | is | true` (or `acrobat | is | acrobat`)[cite: 8, 14].
+[cite_start]Set the UI Policy Condition to: `acrobat | is | true` (or `acrobat | is | acrobat`).
 
 **Execute if True:**
 ```javascript
@@ -55,10 +55,10 @@ The solution utilizes the **ServiceNow UI Policy Engine**, providing a more main
  * Executes when the Acrobat condition is met.
  */
 function onCondition() {
-    // 1. Define the recommendation message per requirement[cite: 15].
+    // 1. Define the recommendation message per requirement.
     var msg = "Recommendation: Adobe Photoshop as well, as it may also be needed for your work.";
     
-    // 2. Show the message under the specific text field[cite: 16].
+    // 2. Show the message under the specific text field.
     g_form.showFieldMsg('Additional_software_requirements', msg, 'info');
 }
 
